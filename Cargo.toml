@@ -79,6 +79,12 @@ bitflags = { version = "2.11.0" }
 deelevate = "0.2.0"
 # *********************************
 
+# Override upstream tauri-plugin-mihomo (revert branch) with our fork that adds
+# Cmcc / TrustTunnel / Unknown variants to ProxyType, fixing the empty proxies
+# page when the running mihomo returns a non-standard proxy type (e.g. "Cmcc").
+[patch."https://github.com/clash-verge-rev/tauri-plugin-mihomo"]
+tauri-plugin-mihomo = { git = "https://github.com/cms88168/tauri-plugin-mihomo", branch = "main" }
+
 [workspace.lints.clippy]
 correctness = { level = "deny", priority = -1 }
 suspicious = { level = "deny", priority = -1 }
