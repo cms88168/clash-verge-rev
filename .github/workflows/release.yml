@@ -206,7 +206,7 @@ jobs:
 
       - name: Pnpm install and check
         run: |
-          pnpm i
+          pnpm install --no-frozen-lockfile
           pnpm run prebuild ${{ matrix.target }}
 
       - name: Add Rust Target
@@ -302,7 +302,7 @@ jobs:
 
       - name: Pnpm install and check
         run: |
-          pnpm i
+          pnpm install --no-frozen-lockfile
           pnpm run prebuild ${{ matrix.target }}
 
       - name: 'Setup for linux'
@@ -446,7 +446,7 @@ jobs:
 
       - name: Pnpm install and check
         run: |
-          pnpm i
+          pnpm install --no-frozen-lockfile
           pnpm run prebuild ${{ matrix.target }}
 
       - name: Download WebView2 Runtime
